@@ -41,7 +41,10 @@
       <label>Ano <input name="year" type="number" min="1900" max="2100"></label>
       <label>Gênero <input name="genre" maxlength="60"></label>
     </div>
-    <label>URL da capa (opcional) <input name="cover" type="url" placeholder="https://..."></label>
+    <label>URL da capa (opcional) <input name="cover" type="text" placeholder="https://..."></label>
+    <label>Ou envie uma foto de capa <input name="coverFile" type="file" accept="image/png,image/jpeg,image/gif,image/webp"></label>
+    <label class="check"><input name="removeCover" type="checkbox"> Remover a capa atual</label>
+    <label>Faixas (uma por linha) <textarea name="tracks" rows="4" maxlength="3000"></textarea></label>
     <p class="err" id="itemErr"></p>
     <div class="row">
       <button type="button" class="ghost" data-close>Cancelar</button>
