@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colorful Disk – seu diário de música</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#/"><span>Colorful Disk</span></a>
+  <nav id="nav"></nav>
+</header>
+<main id="app"></main>
+
+<dialog id="authDlg">
+  <form id="authForm" method="dialog">
+    <h2 id="authTitle">Entrar</h2>
+    <label>Usuário <input name="username" required minlength="3" autocomplete="username"></label>
+    <label>Senha <input name="password" type="password" required minlength="6" autocomplete="current-password"></label>
+    <p class="err" id="authErr"></p>
+    <div class="row">
+      <button type="button" class="ghost" id="authSwitch">Criar conta</button>
+      <button type="button" class="ghost" data-close>Cancelar</button>
+      <button class="primary" type="submit">Entrar</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="itemDlg">
+  <form id="itemForm" method="dialog">
+    <h2 id="itemTitle">Adicionar</h2>
+    <label>Tipo
+      <select name="kind"><option value="album">Álbum</option><option value="musica">Música</option></select>
+    </label>
+    <label>Título <input name="title" required maxlength="150"></label>
+    <label>Artista <input name="artist" required maxlength="150"></label>
+    <div class="row2">
+      <label>Ano <input name="year" type="number" min="1900" max="2100"></label>
+      <label>Gênero <input name="genre" maxlength="60"></label>
+    </div>
+    <label>URL da capa (opcional) <input name="cover" type="url" placeholder="https://..."></label>
+    <p class="err" id="itemErr"></p>
+    <div class="row">
+      <button type="button" class="ghost" data-close>Cancelar</button>
+      <button class="primary" type="submit">Salvar</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
